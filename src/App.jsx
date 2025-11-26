@@ -1,7 +1,10 @@
+import { RouterProvider } from "react-router-dom";
+import { route } from "./servess/router/route.jsx";
+
 export default function App() {
   return (
-    <div>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <>
+   <RouterProvider router={route} />
+    </>
   );
 }

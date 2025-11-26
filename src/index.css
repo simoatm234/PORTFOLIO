@@ -1,4 +1,86 @@
-@import "tailwindcss";
-:root{
-  color-scheme: dark;
+@import 'tailwindcss';
+
+@variant dark (&:where(.dark, .dark *));
+
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+}
+
+
+.theme-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.theme-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.theme-toggle-slider:before {
+  position: absolute;
+  content: '';
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-switch input:checked + .theme-toggle-slider {
+  background-color: #4f46e5;
+}
+
+.theme-toggle-switch input:checked + .theme-toggle-slider:before {
+  transform: translateX(30px);
+}
+
+.theme-toggle-slider:hover {
+  background-color: #94a3b8;
+}
+
+.theme-toggle-switch input:checked + .theme-toggle-slider:hover {
+  background-color: #6366f1;
+}
+
+
+:root.dark .theme-toggle-slider {
+  background-color: #475569;
+}
+
+:root.dark .theme-toggle-switch input:checked + .theme-toggle-slider {
+  background-color: #6366f1;
+}
+
+:root.dark .theme-toggle-slider:hover {
+  background-color: #64748b;
+}
+
+:root.dark .theme-toggle-switch input:checked + .theme-toggle-slider:hover {
+  background-color: #818cf8;
 }
