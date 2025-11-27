@@ -36,12 +36,12 @@ export default function Home() {
         shadow-xl
         max-w-6xl w-full"
       >
-        {/* Text Section */}
+    
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
-          className="w-full md:w-auto text-center md:text-left space-y-6 max-w-xl"
+          className="w-full md:w-auto text-center md:text-left space-y-6 max-w-xl "
         >
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white">
             Hi, I'm <span className="text-blue-500">Mohamed</span>
@@ -84,7 +84,6 @@ export default function Home() {
           </motion.div>
         </motion.div>
 
-        {/* Image Section */}
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
