@@ -36,7 +36,6 @@ export default function Home() {
         shadow-xl
         max-w-6xl w-full"
       >
-    
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,7 +47,7 @@ export default function Home() {
           </h1>
 
           <h2 className="text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400 h-8 flex justify-center md:justify-start items-center">
-            {displayText}
+            {displayText}|
             <span className="border-r-2 border-blue-500 dark:border-blue-400 ml-1 animate-pulse"></span>
           </h2>
 
@@ -63,7 +62,7 @@ export default function Home() {
             transition={{ duration: 2, ease: 'easeOut' }}
             className="flex md:flex-row gap-4 justify-center md:justify-start"
           >
-            <button className="px-6 py-3 bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 transition-all font-semibold rounded-xl shadow-lg hover:shadow-blue-500/30 flex items-center gap-2 text-white">
+            <button className="px-6 py-3 bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 cursor-pointer transition-all font-semibold rounded-xl shadow-lg hover:shadow-blue-500/30 flex items-center gap-2 text-white">
               Download CV
               <Download size={20} />
             </button>
@@ -98,13 +97,12 @@ export default function Home() {
               alt="Mohamed"
               className="rounded-full w-48 md:w-64 shadow-lg 
               transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 
-              animate-[float_3s_ease-in-out_infinite]"
+              animate-[float_3s_ease-in-out_infinite] cursor-pointer"
             />
           </div>
         </motion.div>
       </div>
 
-    
       <style>
         {`
           @keyframes float {

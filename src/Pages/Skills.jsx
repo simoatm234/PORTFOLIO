@@ -7,10 +7,22 @@ import {
   BookOpen,
   Palette,
   Rocket,
+  MoveUp,
+  Route,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function Skills() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShow(window.scrollY > 200);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   const mySkills = {
     frontEnd: [
       { id: 1, name: 'HTML', icon: Code },
@@ -26,6 +38,7 @@ export default function Skills() {
       { id: 11, name: 'Tailwind CSS', icon: Palette },
       { id: 12, name: 'Framer Motion', icon: Rocket },
       { id: 13, name: 'Recharts', icon: Layers },
+      { id: 14, name: 'react-router-dom', icon: Route },
     ],
     backEnd: [
       { id: 14, name: 'PHP', icon: Code },
@@ -49,11 +62,24 @@ export default function Skills() {
       className="min-h-screen px-4 bg-gradient-to-b from-gray-100 to-gray-200 
       dark:from-gray-900 dark:via-gray-950 dark:to-gray-900"
     >
+      {show && (
+        <motion.button
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="fixed z-40 right-5 bottom-2 cursor-pointer hover:scale-105 
+  bg-black text-purple-400 p-3 rounded-full"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
+          <MoveUp />
+        </motion.button>
+      )}
       <div
         className="max-w-6xl mx-auto backdrop-blur-xl bg-white/5 
         border border-white/20 rounded-3xl shadow-2xl p-6"
       >
-        {/* Title */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 dark:text-white tracking-wide">
             My Skills
@@ -61,7 +87,6 @@ export default function Skills() {
           <div className="w-32 h-1 mt-4 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto rounded-full"></div>
         </div>
 
-        {/* Sections */}
         {[
           { title: 'Front End', icon: Code, items: mySkills.frontEnd },
           { title: 'Back End', icon: Server, items: mySkills.backEnd },
@@ -75,7 +100,6 @@ export default function Skills() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="mb-20"
           >
-            {/* Section Title */}
             <h2
               className="text-3xl font-bold mb-8 flex items-center gap-3 bg-clip-text 
             text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
@@ -84,7 +108,6 @@ export default function Skills() {
               {section.title}
             </h2>
 
-            {/* Skills Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {section.items.map((skill, i) => {
                 const Icon = skill.icon;
@@ -96,7 +119,6 @@ export default function Skills() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ amount: 0.4 }}
                     transition={{ duration: 0.4, delay: i * 0.05 }}
-                    
                     className="p-6 rounded-xl bg-white/40 dark:bg-white/5 backdrop-blur-xl 
                     border border-gray-300 dark:border-white/10 shadow-lg 
                     transition-all duration-300 cursor-pointer group hover:scale-105"
