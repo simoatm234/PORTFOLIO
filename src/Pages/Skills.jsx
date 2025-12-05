@@ -6,7 +6,7 @@ import {
   GitBranch,
   BookOpen,
   Palette,
-  Rocket,
+  Rocket,Z
   MoveUp,
   Route,
 } from 'lucide-react';
