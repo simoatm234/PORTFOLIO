@@ -5,6 +5,7 @@ import Index from '../../LayOut/Index.jsx';
 import About from '../../Pages/About.jsx';
 import Skills from '../../Pages/Skills.jsx';
 import Project from '../../Pages/Project.jsx';
+import Certificate from '../../Pages/Certificate.jsx';
 export const route = createBrowserRouter([
   {
     element: <Index />,
@@ -24,6 +25,10 @@ export const route = createBrowserRouter([
       {
         path: '/portfolio/Projects',
         element: <Project />,
+      },
+      {
+        path: '/portfolio/Certificate',
+        element: <Certificate />,
       },
     ],
   },
