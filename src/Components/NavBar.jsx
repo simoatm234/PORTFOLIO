@@ -15,6 +15,7 @@ export default function NavBar() {
     { id: 3, name: 'Skills', path: '/portfolio/Skills' },
     { id: 4, name: 'Projects', path: '/portfolio/Projects' },
     { id: 5, name: 'Certificate', path: '/portfolio/Certificate' },
+    { id: 6, name: 'Contact Me', path: '/portfolio/Contact-Me' },
   ];
 
   // Detect scroll to add glassmorphism effect

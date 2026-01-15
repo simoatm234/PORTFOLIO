@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import x from '../assets/image.png';
+import cv from '../assets/info/MOHAMED-AITMOULAY.pdf';
 import { Download, Github, Linkedin, ArrowRight, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -29,6 +30,15 @@ export default function Home() {
 
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, textIndex]);
+
+  const handelDownloadCV = () => {
+    const link = document.createElement('a');
+     link.href = cv;
+    link.download = 'MOHAMED-AITMOULAY.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-[90vh] flex items-center justify-center p-4 relative overflow-hidden bg-slate-50 dark:bg-[#0b0f1a] transition-colors duration-500">
@@ -94,6 +104,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group px-8 py-4 bg-slate-900 dark:bg-blue-600 text-white font-bold rounded-2xl shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 transition-all hover:bg-blue-600"
+              onClick={handelDownloadCV}
             >
               Download CV
               <Download
