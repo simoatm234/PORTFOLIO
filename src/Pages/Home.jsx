@@ -10,7 +10,6 @@ export default function Home() {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // Improved Typing Logic for a smoother "human" feel
   useEffect(() => {
     const currentRole = roles[textIndex];
     const typingSpeed = isDeleting ? 50 : 100;
@@ -21,7 +20,7 @@ export default function Home() {
       } else if (isDeleting && displayText.length > 0) {
         setDisplayText(currentRole.slice(0, displayText.length - 1));
       } else if (!isDeleting && displayText.length === currentRole.length) {
-        setTimeout(() => setIsDeleting(true), 1500); // Pause at end
+        setTimeout(() => setIsDeleting(true), 1500);
       } else if (isDeleting && displayText.length === 0) {
         setIsDeleting(false);
         setTextIndex((prev) => (prev + 1) % roles.length);
@@ -33,7 +32,7 @@ export default function Home() {
 
   const handelDownloadCV = () => {
     const link = document.createElement('a');
-     link.href = cv;
+    link.href = cv;
     link.download = 'MOHAMED-AITMOULAY.pdf';
     document.body.appendChild(link);
     link.click();
@@ -115,7 +114,7 @@ export default function Home() {
 
             <div className="flex gap-4 justify-center">
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/mohamed-ait-moulay-3a150b297/"
                 whileHover={{ y: -5 }}
                 className="p-4 rounded-2xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:text-blue-600 shadow-md flex items-center justify-center transition-all"
               >
@@ -123,7 +122,7 @@ export default function Home() {
               </motion.a>
 
               <motion.a
-                href="https://github.com"
+                href="https://github.com/simoatm234"
                 whileHover={{ y: -5 }}
                 className="p-4 rounded-2xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:text-indigo-600 shadow-md flex items-center justify-center transition-all"
               >

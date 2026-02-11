@@ -13,7 +13,6 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#0b0f1a] transition-colors duration-500 selection:bg-blue-500/30">
-      {/* Navigation is fixed, so it stays on top of all pages */}
       <NavBar />
 
       <main className="relative">
@@ -25,11 +24,10 @@ export default function Index() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
           >
-            {/* This is where your Home, About, Skills, etc. are rendered */}
             <Outlet />
           </motion.div>
         </AnimatePresence>
       </main>
-      </div>
+    </div>
   );
 }

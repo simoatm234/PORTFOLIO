@@ -19,6 +19,11 @@ import users from '../assets/Eccomerc/users.png';
 import newUser from '../assets/Eccomerc/newUser.png';
 import login from '../assets/Eccomerc/login.png';
 import dashBord from '../assets/Eccomerc/dashBord.png';
+import img1 from '../assets/movieApp/1.png';
+import img2 from '../assets/movieApp/2.png';
+import img3 from '../assets/movieApp/3.png';
+import img4 from '../assets/movieApp/4.png';
+import img5 from '../assets/movieApp/5.png';
 
 export default function Project() {
   const [imageIndex, setImageIndex] = useState({});
@@ -34,10 +39,21 @@ export default function Project() {
       image: [users, newUser, login, dashBord],
       description:
         'A complete full-stack e-commerce platform featuring authentication, dashboard management, and real-time data fetching.',
-      status: 'private',
+      status: 'public',
     },
     {
       id: 2,
+      name: 'ATM Movie',
+      path: 'https://github.com/simoatm234/react-movies-school-project',
+      languages: ['React'],
+      tools: ['Redux Toolkit', 'Tailwind CSS', 'Axios', 'React Router', 'API'],
+      image: [img1, img2, img3, img4, img5],
+      description:
+        'ATM Movie is a modern, responsive React web application for discovering movies and managing your watchlist. The project integrates TMDB API (or a similar movie API) to fetch movie data dynamically, including popular, top-rated, and upcoming movies. Users can search for movies in real-time, toggle between light and dark themes, and navigate easily across the app with a clean and interactive UI.',
+      status: 'public',
+    },
+    {
+      id: 3,
       name: 'Todo List App',
       path: 'https://github.com/simoatm234/TODO_LIST_REACT_JS',
       languages: ['React'],
@@ -48,7 +64,7 @@ export default function Project() {
       status: 'public',
     },
     {
-      id: 3,
+      id: 4,
       name: 'CRUD App (RTK Query)',
       path: 'https://github.com/simoatm234/RTQ-DUERY-',
       languages: ['React'],
@@ -56,10 +72,10 @@ export default function Project() {
       image: [rtq],
       description:
         'Advanced data fetching and caching implementation using Redux Toolkit Query.',
-      status: 'private',
+      status: 'public',
     },
     {
-      id: 4,
+      id: 5,
       name: 'Modern Calculator',
       path: 'https://github.com/simoatm234/proget1',
       languages: ['HTML', 'CSS', 'JavaScript'],
